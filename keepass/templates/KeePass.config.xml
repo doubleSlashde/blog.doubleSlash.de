@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Configuration xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Application>
+		<LanguageFile>German.lngx</LanguageFile>
+		<Start>
+			<CheckForUpdate>true</CheckForUpdate>
+			<CheckForUpdateConfigured>true</CheckForUpdateConfigured>
+		</Start>
+		<FileClosing>
+			<AutoSave>true</AutoSave>
+		</FileClosing>
+	</Application>
+	<MainWindow>
+		<CloseButtonMinimizesWindow>true</CloseButtonMinimizesWindow>
+		<MinimizeToTray>true</MinimizeToTray>
+		<FocusQuickFindOnUntray>true</FocusQuickFindOnUntray>
+	</MainWindow>
+	<UI>
+		<TrayIcon>
+			<SingleClickDefault>true</SingleClickDefault>
+		</TrayIcon>
+	</UI>
+	<Security>
+		<WorkspaceLocking>
+			<LockOnSessionSwitch>true</LockOnSessionSwitch>
+			<LockOnSuspend>true</LockOnSuspend>
+			<LockOnRemoteControlChange>true</LockOnRemoteControlChange>
+		</WorkspaceLocking>
+	</Security>
+	<Defaults>
+		<NewEntryExpiresInDays>356</NewEntryExpiresInDays>
+	</Defaults>
+	<Integration>
+		<AutoTypeCancelOnWindowChange>true</AutoTypeCancelOnWindowChange>
+		<AutoTypeCancelOnTitleChange>true</AutoTypeCancelOnTitleChange>
+	</Integration>
+</Configuration>
