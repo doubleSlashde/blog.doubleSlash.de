@@ -2,10 +2,10 @@ var root = document.getElementById("dsLogoDiv");
 var colorPickerDomElement = document.getElementById("colorPicker");
 var autoRotateDomElement = document.getElementById("autoRotate");
 
-var rootPath = "https://TODO";
+var rootPath = "https://cdn.jsdelivr.net/gh/doubleSlashde/blog.doubleSlash.de@master/3dVisualisation/obj/";
 var mtlName = "dsLogo.mtl";
 var objName = "dsLogo.obj";
-	
+
 var width = 250;
 var height = 200;
 var windowHalfX = width / 2;
@@ -63,8 +63,8 @@ function init() {
     animate();
 }
 
-function loadAndAddModelToScene(){
-	var mtlLoader = new THREE.MTLLoader();
+function loadAndAddModelToScene() {
+    var mtlLoader = new THREE.MTLLoader();
     mtlLoader.crossOrigin = "anonymous";
     mtlLoader.setPath(rootPath);
     mtlLoader.load(mtlName, function(materials) {
@@ -76,8 +76,8 @@ function loadAndAddModelToScene(){
         objLoader.load(objName, function(object) {
             logo = object;
             var child = logo.children[0];
-            for (var i = 0; i < child.material.materials.length; i++) {
-                var material = child.material.materials[i];
+            for (var i = 0; i < child.material.length; i++) {
+                var material = child.material[i];
                 if (material.name.includes("dsCyan")) {
                     dsCyan = material;
                     if (colorPickerDomElement !== undefined) {
@@ -93,14 +93,11 @@ function loadAndAddModelToScene(){
 
 function animate() {
     requestAnimationFrame(animate);
-	
-	var delta = clock.getDelta();
-	
-	if (logo !== undefined && autoRotate) {
+    var delta = clock.getDelta();
+    if (logo !== undefined && autoRotate) {
         var rotate = THREE.Math.degToRad(delta * autoRotateSpeedDegPerSecond);
         logo.rotateZ(rotate);
     }
-	
     render();
 }
 
