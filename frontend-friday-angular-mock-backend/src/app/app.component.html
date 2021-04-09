@@ -1,0 +1,17 @@
+<table>
+  <thead>
+  <tr>
+    <th>Titel</th>
+    <th>Erscheinungsdatum</th>
+    <th>Genre</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let movie of movies">
+      <td>{{movie.title}}</td>
+      <td>{{movie.releaseDate}}</td>
+      <td>{{movie.genre}}</td>
+    </tr>
+  </tbody>
+</table>
+<button (click)="deleteMovies()">Filme löschen</button>
